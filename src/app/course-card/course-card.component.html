@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h1>
+        {{ id + "-" + fullName }} <small>{{ gender }}</small>
+      </h1>
+      <h2>
+        {{ email }} <small>{{ ipAddress }}</small>
+      </h2>
+      <!-- <h4>{{homeService.numberOfActiveCourse.value}}</h4> -->
+      <button (click)="showPorfile()" class="btn btn-primary">
+        View Course
+      </button>
+      <hr>
+    </div>
+  </div>
+</div>

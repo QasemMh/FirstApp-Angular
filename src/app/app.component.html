@@ -1,41 +1,19 @@
-
-<app-navbar></app-navbar>
+<!-- <app-navbar></app-navbar> -->
 
 <router-outlet></router-outlet>
 
-<div class="row" style="margin: 100px 0; padding: 30px; border: 1px solid #000">
-  <div class="col-md-6">
-    <div *ngIf="hasMoreThan2">This is shown if condition is true</div>
+<!-- <ngx-spinner type="ball-scale-multiple"></ngx-spinner> -->
 
-    <div [ngSwitch]="hasMoreThan2">
-      <div *ngSwitchCase="true">One</div>
-      <div *ngSwitchCase="false">Two</div>
-      <div *ngSwitchDefault>This is Default</div>
-    </div>
+<ngx-spinner
+bdColor="rgba(51,51,51,0.8)"
+size="medium"
+color="#fff"
+type="ball-scale-multiple"
+>
+<p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>
 
-    <table class="table">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Name</th>
-          <th>address Name</th>
-          <th>city</th>
-          <th>state</th>
-        </tr>
-      </thead>
+<!-- <app-course></app-course> -->
 
-      <tbody>
-        <tr *ngFor="let customer of customers">
-          <td>{{ customer.customerNo }}</td>
-          <td>{{ customer.name }}</td>
-          <td>{{ customer.address }}</td>
-          <td>{{ customer.city }}</td>
-          <td>{{ customer.state }}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-
-
-<app-footer></app-footer>
+ 
+<!-- <app-footer></app-footer> -->

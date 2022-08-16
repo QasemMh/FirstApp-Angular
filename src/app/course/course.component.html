@@ -1,0 +1,21 @@
+<!-- <app-course-card
+  *ngFor="let obj of courses"
+  [courseName]="obj.name"
+  [courseDate]="obj.releaseDate"
+
+ 
+>
+</app-course-card> -->
+
+  <app-course-card
+  *ngFor="let obj of homeService.dataAPI"
+  [id]="obj.id"
+  [fullName]="obj.first_name+' '+obj.last_name"
+  [gender]="obj.gender"
+  [email]="obj.email"
+  [ipAddress]="obj.ip_address"
+>
+</app-course-card> 
+
+
+<!-- (click)="showPorfile()" -->
