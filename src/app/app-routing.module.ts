@@ -1,3 +1,4 @@
+import { AutherizationGaurdGuard } from './autherization-gaurd.guard';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -37,6 +38,7 @@ const routes: Routes = [
    {
     path: 'admin',
     loadChildren: () => AdminModule,
+    canActivate: [AutherizationGaurdGuard],
   },
   {
     path: 'course',
