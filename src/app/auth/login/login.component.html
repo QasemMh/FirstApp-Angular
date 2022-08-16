@@ -1,1 +1,115 @@
-<p>login works!</p>
+<!--
+  <form class="example-form">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Email</mat-label>
+    <input
+      type="email"
+      matInput
+      [formControl]="email"
+      [errorStateMatcher]="matcher"
+      placeholder="Ex. pat@example.com"
+    />
+    <mat-hint>Errors appear instantly!</mat-hint>
+    <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
+      Please enter a valid email address
+    </mat-error>
+    <mat-error *ngIf="email.hasError('required')">
+      Email is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+   <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Password</mat-label>
+    <input
+      type="password"
+      matInput
+      [formControl]="password"
+      [errorStateMatcher]="matcher"
+    />
+    <mat-hint>Errors appear instantly!</mat-hint>
+    <mat-error
+      *ngIf="password.hasError('minlength') && !password.hasError('required')"
+    >
+      Password must be at least 6 characters long
+    </mat-error>
+    <mat-error *ngIf="password.hasError('required')">
+      Password is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+</form>
+-->
+
+<!--  -->
+<div id="login">
+  <div class="login-card">
+    <div class="card-title">
+      <h1>Please Sign In</h1>
+    </div>
+
+    <div class="content">
+      <form method="POST" class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Email or username</mat-label>
+          <input
+            type="text"
+            id="email"
+            matInput
+            [formControl]="email"
+            [errorStateMatcher]="matcher"
+            placeholder="Ex. pat@example.com or admin"
+          />
+          <mat-hint>Errors appear instantly!</mat-hint>
+          <mat-error
+            *ngIf="email.hasError('email') && !email.hasError('required')"
+          >
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="email.hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <!--  -->
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Password</mat-label>
+          <input
+            type="password"
+            id="password"
+            matInput
+            [formControl]="password"
+            [errorStateMatcher]="matcher"
+          />
+          <mat-hint>Errors appear instantly!</mat-hint>
+          <mat-error
+            *ngIf="
+              password.hasError('minlength') && !password.hasError('required')
+            "
+          >
+            Password must be at least 6 characters long
+          </mat-error>
+          <mat-error *ngIf="password.hasError('required')">
+            Password is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <!--  -->
+        <div class="level options">
+          <div class="checkbox level-left">
+            <input type="checkbox" id="checkbox" class="regular-checkbox" />
+            <label for="checkbox"></label>
+            <span>Remember me</span>
+          </div>
+
+          <a class="btn btn-link level-right" href="#">Forgot Password?</a>
+        </div>
+
+        <button
+          type="submit"
+          [disabled]="!email.valid || !password.valid"
+          (click)="HandleLogin($event)"
+          class="btn btn-primary"
+          style="margin-top: 10px"
+        >
+          Login
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

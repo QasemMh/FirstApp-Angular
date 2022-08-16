@@ -1,0 +1,32 @@
+<h2 mat-dialog-title>Add New Course</h2>
+<mat-dialog-content class="mat-typography">
+  <!--  -->
+  <form [formGroup]="createForm" class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Full Name</mat-label>
+      <input
+        type="text"
+        matInput
+        formControlName="fullName"
+        [errorStateMatcher]="matcher"
+      />
+    </mat-form-field>
+
+    <div>
+         <input
+         type="file"
+         formControlName="imageFile"
+         #file
+          (change)="uploadImage(file.files)"
+        />
+
+    </div>
+
+
+  </form>
+  <!--  -->
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button cdkFocusInitial>Add</button>
+</mat-dialog-actions>
