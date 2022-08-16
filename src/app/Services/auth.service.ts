@@ -39,7 +39,7 @@ export class AuthService {
       .post('https://localhost:44349/api/Jwt/Authen', body, requestOptions)
       .subscribe(
         (data) => {
-          console.log("token:");
+          console.log('token:');
           console.log(data);
           this.spinner.hide();
           const respons = {
@@ -49,7 +49,7 @@ export class AuthService {
           localStorage.setItem('token', respons.token);
           let decoded: any = jwt_decode(respons.token);
           localStorage.setItem('userData', JSON.stringify(decoded));
-          //decoded token
+          console.log('decoded token');
           console.log(decoded);
 
           if (decoded.role == 'admin') {
